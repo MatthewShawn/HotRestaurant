@@ -1,6 +1,4 @@
 
-$(document).ready(function () {
-
 var reservationList  = [
   {
     1: "Ryan"
@@ -40,4 +38,6 @@ waitingList.push(waitingListInput);
 
 var waitingList = [];
 
-})
+
+
+module.exports = "Reservation";
