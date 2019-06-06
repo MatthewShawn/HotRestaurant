@@ -39,9 +39,11 @@
                     <div class="card-body">
 
                         <div id="stats">
-                            <h3><strong>1|</strong> <span id="role">Ryan</span></h3>
-                            <h3><strong>2|</strong> <span id="age">Matthew</span></h3>
-                            <h3><strong>3|</strong> <span id="force-points">Stetson</span></h3>
+                            <h3><strong>1|</strong> <span id="name1">Ryan</span></h3>
+                            <h3><strong>2|</strong> <span id="name2">Matthew</span></h3>
+                            <h3><strong>3|</strong> <span id="name3">Stetson</span></h3>
+                            <h3><strong>4|</strong> <span id="name4">Stetson</span></h3>
+                            <h3><strong>5|</strong> <span id="name5">Stetson</span></h3>
                         </div>
                     </div>
                 </div>
@@ -51,28 +53,46 @@
 
     <script type="text/javascript">
         // QUESTION: What is this code doing?
-        $("#search-btn").on("click", function() {
-            var searchedCharacter = $("#character-search").val().trim();
+        $(document).ready(function() {
 
-            // Using a RegEx Pattern to remove spaces from searchedCharacter
-            // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-            searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
+            $.get("/view/reservations/", function(data) {
+                //for (var idx=0; idx< data.length; idx++){
 
-            // QUESTION: What does $.get do? What are the parameters it is expecting?
-            $.get("/api/characters/" + searchedCharacter, function(data) {
-                console.log(data);
+                //}
                 if (data) {
-                    $("#stats").show();
-                    $("#name").text(data.name);
-                    $("#role").text(data.role);
-                    $("#age").text(data.age);
-                    $("#force-points").text(data.forcePoints);
-                } else {
-                    $("#name").text("The force is not strong with this one. Your character was not found.");
-                    $("#stats").hide();
+                    $("#name1").text(data[0].name);
+                    $("#name2").text(data[1].name);
+                    $("#name3").text(data[2].name);
+                    $("#name4").text(data[3].name);
+                    $("#name5").text(data[4].name);
                 }
             });
         });
+
+
+
+        //$("#search-btn").on("click", function() {
+        //var searchedCharacter = $("#character-search").val().trim();
+
+        // Using a RegEx Pattern to remove spaces from searchedCharacter
+        // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+        //searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
+
+        // QUESTION: What does $.get do? What are the parameters it is expecting?
+        //$.get("/api/characters/" + searchedCharacter, function(data) {
+        //  console.log(data);
+        //  if (data) {
+        //     $("#stats").show();
+        //    $("#name").text(data.name);
+        //    $("#role").text(data.role);
+        //    $("#age").text(data.age);
+        //    $("#force-points").text(data.forcePoints);
+        // } else {
+        //     $("#name").text("The force is not strong with this one. Your character was not found.");
+        //    $("#stats").hide();
+        // }
+        //});
+        // });
     </script>
 
 </body>
