@@ -5,16 +5,28 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 var waitingList = [];
 var reservationList = [{
-        1: "Ryan"
+        name: "Test",
+        phone: 815-420-6969,
+        email: "test@test.com",
+        uniqueID: 1
     },
     {
-        2: "Stetson"
+        name: "Test2",
+        phone: 815-220-6969,
+        email: "test2@test.com",
+        uniqueID: 2
     },
     {
-        3: "Matthew"
+        name: "Test3",
+        phone: 815-320-6969,
+        email: "tes3t@test.com",
+        uniqueID: 3
     },
     {
-        4: "Bryan"
+        name: "Test4",
+        phone: 815-420-6969,
+        email: "test4@test.com",
+        uniqueID: 4
     }
 ];
 // Sets up the Express app to handle data parsing

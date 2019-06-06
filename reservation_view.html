@@ -48,6 +48,14 @@
                     </div>
                 </div>
             </div>
+            <div class="col-12">
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h3><strong>Wait List</strong></h3>
+                    </div>
+                </div>
+                <div id="wait-list"></div>
         </div>
     </div>
 
@@ -67,6 +75,14 @@
                     $("#name5").text(data[4].name);
                 }
             });
+//             $.get("/view/waitList", function(data) {
+// console.log(data)
+//                 if (data) {
+//                     for (var i=0; i < data.length; i++) {
+//                         $("wait-list").html(data[i].name);
+//                     }
+//                 }
+//             });
         });
 
 
